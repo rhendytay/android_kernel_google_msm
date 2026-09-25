@@ -1320,7 +1320,9 @@ static void ffs_data_reset(struct ffs_data *ffs)
 {
 	ENTER();
 
+	ffs_data_get(ffs);
 	ffs_data_clear(ffs);
+	ffs_data_put(ffs);
 
 	ffs->epfiles = NULL;
 	ffs->raw_descs = NULL;
